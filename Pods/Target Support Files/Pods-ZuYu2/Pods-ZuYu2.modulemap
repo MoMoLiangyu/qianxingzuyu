@@ -1,0 +1,6 @@
+framework module Pods_ZuYu2 {
+  umbrella header "Pods-ZuYu2-umbrella.h"
+
+  export *
+  module * { export * }
+}

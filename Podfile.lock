@@ -1,0 +1,145 @@
+PODS:
+  - Alamofire (5.4.3)
+  - AMap2DMap (5.6.1):
+    - AMapFoundation (~> 1.4)
+  - AMapFoundation (1.6.7)
+  - AMapLocation (2.6.8):
+    - AMapFoundation (~> 1.6.4)
+  - AMapSearch (7.9.0):
+    - AMapFoundation (~> 1.6.6)
+  - Bugly (2.5.90)
+  - CHIOTPField (0.1.0):
+    - CHIOTPField/Four (= 0.1.0)
+    - CHIOTPField/One (= 0.1.0)
+    - CHIOTPField/Three (= 0.1.0)
+    - CHIOTPField/Two (= 0.1.0)
+  - CHIOTPField/Four (0.1.0)
+  - CHIOTPField/One (0.1.0)
+  - CHIOTPField/Three (0.1.0)
+  - CHIOTPField/Two (0.1.0)
+  - CocoaLumberjack/Core (3.7.2)
+  - CocoaLumberjack/Swift (3.7.2):
+    - CocoaLumberjack/Core
+  - CryptoSwift (1.4.0)
+  - IQKeyboardManagerSwift (6.5.6)
+  - JCore (2.1.4-noidfa)
+  - JPush (3.2.4-noidfa):
+    - JCore (< 3.0.0, >= 2.0.0)
+  - Kingfisher (6.3.0)
+  - LLCycleScrollView (1.6.0):
+    - Kingfisher
+  - MarqueeLabel (4.0.5)
+  - MJRefresh (3.3.1)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (14.0.0):
+    - Moya/Core
+    - RxSwift (~> 5.0)
+  - PryntTrimmerView (4.0.2)
+  - RxSwift (5.1.2)
+  - Segmentio (4.1)
+  - SnapKit (4.2.0)
+  - SteviaLayout (4.7.3)
+  - SVProgressHUD (2.2.5)
+  - SwifterSwift/Foundation (5.2.0)
+  - SwifterSwift/SwiftStdlib (5.2.0)
+  - SwifterSwift/UIKit (5.2.0)
+  - SwiftyJSON (5.0.1)
+  - SwiftyMenu (0.5.9):
+    - SnapKit (~> 4.2.0)
+  - Toast-Swift (5.0.1)
+  - YPImagePicker (4.5.0):
+    - PryntTrimmerView (~> 4.0.2)
+    - SteviaLayout (~> 4.7.3)
+
+DEPENDENCIES:
+  - AMap2DMap
+  - AMapLocation
+  - AMapSearch
+  - Bugly
+  - CHIOTPField (~> 0.1)
+  - CHIOTPField/Four
+  - CocoaLumberjack/Swift
+  - CryptoSwift (~> 1.0)
+  - IQKeyboardManagerSwift
+  - JCore (= 2.1.4-noidfa)
+  - JPush (= 3.2.4-noidfa)
+  - Kingfisher
+  - LLCycleScrollView
+  - MarqueeLabel
+  - MJRefresh
+  - Moya/RxSwift (~> 14.0)
+  - Segmentio
+  - SVProgressHUD
+  - SwifterSwift/Foundation
+  - SwifterSwift/SwiftStdlib
+  - SwifterSwift/UIKit
+  - SwiftyJSON
+  - SwiftyMenu (~> 0.5.8)
+  - Toast-Swift
+  - YPImagePicker
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AMap2DMap
+    - AMapFoundation
+    - AMapLocation
+    - AMapSearch
+    - Bugly
+    - CHIOTPField
+    - CocoaLumberjack
+    - CryptoSwift
+    - IQKeyboardManagerSwift
+    - JCore
+    - JPush
+    - Kingfisher
+    - LLCycleScrollView
+    - MarqueeLabel
+    - MJRefresh
+    - Moya
+    - PryntTrimmerView
+    - RxSwift
+    - Segmentio
+    - SnapKit
+    - SteviaLayout
+    - SVProgressHUD
+    - SwifterSwift
+    - SwiftyJSON
+    - SwiftyMenu
+    - Toast-Swift
+    - YPImagePicker
+
+SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  AMap2DMap: cac76bc057de18a1641f34df6b50bf5bc6b23571
+  AMapFoundation: c7da72b42a713f1429c88af1858d623dde88934b
+  AMapLocation: dad27669c4ca68e395ce7532ff614b7d4d45f7b7
+  AMapSearch: 94cff5f6ab7233c1639111e486861ac2acea6d4b
+  Bugly: 88bc32c0acc6fef7b74d610f0319ee7560d6b9fe
+  CHIOTPField: 5df19b433ccfad2a80e944d3abde128a236aaf01
+  CocoaLumberjack: b7e05132ff94f6ae4dfa9d5bce9141893a21d9da
+  CryptoSwift: 7cc902df1784de3b389a387756c7d710f197730c
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  JCore: 2f15311e6889ab43ed5d629802ef793cac566465
+  JPush: 2ff11d3013b360bc1b7da16741027e88f12fe3e6
+  Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
+  LLCycleScrollView: a08f666671f9fd1a205df9defebc3c217d59abc8
+  MarqueeLabel: 00cc0bcd087111dca575878b3531af980559707d
+  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  PryntTrimmerView: 6a43cc90df5d99addeabd33d4ba09b1365322130
+  RxSwift: 1e2e1f9570186967f617e49128ed26ccf1bafc8e
+  Segmentio: ab29def64e1bff6e6e9b97671788a99bed3f1d9f
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+  SwiftyMenu: 9bd359714f1e2b599f9b0bfad8ed0d65e4d6b974
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+  YPImagePicker: 6f410f475bd22fa8cd430495b54d4b2f15865c2d
+
+PODFILE CHECKSUM: d09721ee1724aac50ef11146c70eb4fc484f0b6c
+
+COCOAPODS: 1.10.1
