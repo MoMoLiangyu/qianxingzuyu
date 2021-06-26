@@ -118,6 +118,7 @@ class LoginController: UIViewController {
         
         AboutAuth.photoAndCameraAuthAction(view: self.view)
         
+        print("推送成功了")
         JPUSHService.deleteAlias({ (iResCode, iAlias, seq) in
                     print("deleiResCode---\(iResCode)")
                     print("deleiAlias---\(iAlias ?? "")")
