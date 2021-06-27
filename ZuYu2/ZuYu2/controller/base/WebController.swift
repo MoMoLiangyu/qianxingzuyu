@@ -163,7 +163,7 @@ class WebController: UIViewController {
         payReq.partnerId = dict["partnerid"] ?? ""
         payReq.prepayId = dict["prepayid"] ?? ""
         payReq.sign = dict["sign"] ?? ""
-        payReq.timeStamp = UInt32(dict["timeStamp"] ?? "0") ?? 0
+        payReq.timeStamp = UInt32(dict["timestamp"] ?? "0") ?? 0
         WXApiManager.shared.payAlertController(self, request: payReq) {
             [weak self] in
             guard let self = self else { return }

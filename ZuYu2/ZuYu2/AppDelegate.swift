@@ -176,9 +176,9 @@ extension AppDelegate: JPUSHRegisterDelegate {
         entity.types = 1 << 0 | 1 << 1 | 1 << 2
         JPUSHService.register(forRemoteNotificationConfig: entity, delegate: self)
         JPUSHService.setup(withOption: launchOptions,
-                           appKey: "3e37b8f368b5da53cf47bbe5",
+                           appKey: "c58c972c3158e58d16f676ba",
                            channel: "App Store",
-                           apsForProduction: false,
+                           apsForProduction: true,
                            advertisingIdentifier: nil)
     }
     
