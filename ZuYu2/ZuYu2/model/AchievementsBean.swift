@@ -6,15 +6,15 @@
 import Foundation
 
 struct AchievementsBean : Codable {
-
-        let jdkf : Int?
-        let kdjj : Int?
-        let krsl : Int?
-        let skyj : Int?
-        let spyj : Int?
-        let xcyj : Int?
-        let xmyj : Int?
-        let xzhy : Int?
+    
+        let jdkf : Int?//接待客房
+        let kdjj : Int?//客单均价
+        let krsl : Int?//客人数量
+        let skyj : Int?//售卡业绩
+        let spyj : Int?//商品业绩
+        let xcyj : Int?//续卡业绩
+        let xmyj : Int?//项目业绩
+        let xzhy : Int?//新增会员
 
         enum CodingKeys: String, CodingKey {
                 case jdkf = "jdkf"

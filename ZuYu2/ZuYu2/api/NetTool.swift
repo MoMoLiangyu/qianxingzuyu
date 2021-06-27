@@ -65,7 +65,7 @@ extension NetTool: Moya.TargetType {
         case .login:
             return "/login"
         case .refreshToken(let userType):
-            return "/home/\(userType)"
+            return "/home/type/\(userType)"
         case .sendSmsCode:
             return "/common/sendSmsCode"
         case .qxFloorRegistration:

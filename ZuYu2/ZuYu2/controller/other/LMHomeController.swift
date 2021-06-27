@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import SnapKit
 
 class LMHomeController: UIViewController {
     
@@ -35,28 +36,76 @@ class LMHomeController: UIViewController {
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         lbl.textColor = UIColor.white
-        lbl.text = "工位到期:2020-05-08》"
+        lbl.isHidden = true
+        lbl.text = "工位到期:2020-05-08"
         return lbl
     }()
     
     
     func setUpTitleView() {
+        let navHeight:CGFloat  = UIApplication.shared.statusBarFrame.height + 44
+        let navBgView = UIView()
+        view.addSubview(navBgView)
+        navBgView.snp.makeConstraints { make in
+            make.top.left.right.equalToSuperview()
+            make.height.equalTo(navHeight)
+        }
+        
         let mTitleView = UIView.init()
-        mTitleView.translatesAutoresizingMaskIntoConstraints = false
+        navBgView.addSubview(mTitleView)
+        mTitleView.snp.makeConstraints { make in
+            make.left.bottom.right.equalToSuperview()
+            make.height.equalTo(44)
+        }
+//        mTitleView.translatesAutoresizingMaskIntoConstraints = false
         mTitleView.addSubview(mTitleLbl)
+        mTitleLbl.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.left.equalToSuperview().offset(16)
+            make.height.equalTo(20)
+            make.width.greaterThanOrEqualTo(30)
+        }
         mTitleView.addSubview(mSubTitleLbl)
-        mTitleLbl.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-        mTitleLbl.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
-        mSubTitleLbl.setContentHuggingPriority(.defaultLow, for: .horizontal)
-        mSubTitleLbl.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-        NSLayoutConstraint.activate([
-            mTitleLbl.centerYAnchor.constraint(equalTo: mTitleView.centerYAnchor),
-            mTitleLbl.leadingAnchor.constraint(equalTo: mTitleView.leadingAnchor, constant: 0),
-            mSubTitleLbl.bottomAnchor.constraint(equalTo: mTitleLbl.bottomAnchor),
-            mSubTitleLbl.leadingAnchor.constraint(equalTo: mTitleLbl.trailingAnchor, constant: 6),
-            mSubTitleLbl.trailingAnchor.constraint(equalTo: mTitleView.trailingAnchor, constant: -5),
-        ])
-        navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: mTitleView)
+        mSubTitleLbl.snp.makeConstraints { make in
+            make.top.equalTo(mTitleLbl.snp.bottom).offset(6)
+            make.left.equalToSuperview().offset(16)
+            make.height.equalTo(10)
+            make.width.greaterThanOrEqualTo(30)
+        }
+        
+        let qiehuan = UIButton()
+        qiehuan.setImage(UIImage(named: "qiehuan"), for: .normal)
+        qiehuan.addTarget(self, action: #selector(qiehuan(_:)), for: .touchUpInside)
+        navBgView.addSubview(qiehuan)
+        qiehuan.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.right.equalToSuperview().offset(-16)
+            make.size.equalTo(CGSize(width: 30, height: 30))
+        }
+        
+        let xiaoxi = UIButton()
+        xiaoxi.setImage(UIImage(named: "xiaoxi"), for: .normal)
+        xiaoxi.addTarget(self, action: #selector(xiaoxi(_:)), for: .touchUpInside)
+        navBgView.addSubview(xiaoxi)
+        xiaoxi.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.right.equalTo(qiehuan.snp.left).offset(-4)
+            make.size.equalTo(CGSize(width: 30, height: 30))
+        }
+        
+        
+//        mTitleLbl.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+//        mTitleLbl.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+//        mSubTitleLbl.setContentHuggingPriority(.defaultLow, for: .horizontal)
+//        mSubTitleLbl.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+//        NSLayoutConstraint.activate([
+//            mTitleLbl.centerYAnchor.constraint(equalTo: mTitleView.centerYAnchor),
+//            mTitleLbl.leadingAnchor.constraint(equalTo: mTitleView.leadingAnchor, constant: 0),
+//            mSubTitleLbl.bottomAnchor.constraint(equalTo: mTitleLbl.bottomAnchor),
+//            mSubTitleLbl.leadingAnchor.constraint(equalTo: mTitleLbl.trailingAnchor, constant: 6),
+//            mSubTitleLbl.trailingAnchor.constraint(equalTo: mTitleView.trailingAnchor, constant: -5),
+//        ])
+//        navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: mTitleView)
     }
     
     lazy var bgView = { ()-> UIView in
@@ -108,10 +157,13 @@ class LMHomeController: UIViewController {
         ["icon" : "jyfankui", "desc" : "建议反馈", "action" : "feedback"],
     ]
     
-  
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        initNavigationItem()
+       
         collectionView.bounces = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
@@ -123,27 +175,36 @@ class LMHomeController: UIViewController {
         collectionView.delegate = self
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.estimatedItemSize = CGSize(width: 100, height: 100)
-        getAchievementsApi()
         
-        setupYKWoodpecker()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
         bgView.frame = collectionView.bounds
         bgImgV.frame = bgView.bounds
         roundView.frame = CGRect.init(x: 0, y: 255, width: bgView.width, height: bgView.height-255)
         roundView.roundCorners([.topLeft, .topRight], radius: 40)
+        
+        initNavigationItem()
+        //头部信息设置
+        mTitleLbl.text = getUser()?.name ?? " "
+        getAchievementsApi()
+        
+//        setupYKWoodpecker()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+//        bgView.frame = collectionView.bounds
+//        bgImgV.frame = bgView.bounds
+//        roundView.frame = CGRect.init(x: 0, y: 255, width: bgView.width, height: bgView.height-255)
+//        roundView.roundCorners([.topLeft, .topRight], radius: 40)
     }
     
     func initNavigationItem()  {
         //全透明
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
+//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        navigationController?.navigationBar.shadowImage = UIImage()
         setUpTitleView()
-        let xiaoxi = UIBarButtonItem.init(image: UIImage.init(named: "xiaoxi")?.redDotImage().withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(xiaoxi(_:)))
-        let qiehuan = UIBarButtonItem.init(image: UIImage.init(named: "qiehuan")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(qiehuan(_:)))
-        navigationItem.rightBarButtonItems = [qiehuan, xiaoxi]
+//        let xiaoxi = UIBarButtonItem.init(image: UIImage.init(named: "xiaoxi")?.redDotImage().withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(xiaoxi(_:)))
+//        let qiehuan = UIBarButtonItem.init(image: UIImage.init(named: "qiehuan")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(qiehuan(_:)))
+//        navigationItem.rightBarButtonItems = [qiehuan, xiaoxi]
         
         AboutAuth.photoAndCameraAuthAction(view: self.view)
     }
@@ -191,6 +252,7 @@ class LMHomeController: UIViewController {
         NetManager.request(.achievements, entity: AchievementsBean.self).subscribe(onNext: { [weak self] (result) in
             guard let self = self else { return }
             print(result)
+            self.achievementsBean = result
             self.collectionView.reloadData()
             }).disposed(by: disposeBag)
     }

@@ -36,6 +36,7 @@ pod 'CHIOTPField/Four' #验证码输入框
 pod 'AMap2DMap' #高德地图 2D地图SDK
 pod 'AMapSearch' #高德地图 搜索功能
 pod 'AMapLocation' #高德地图 定位SDK
+pod 'SnapKit'
 
 #公共组件
 pod 'JCore', '2.1.4-noidfa'
@@ -67,6 +68,7 @@ pod 'AMapSearch' #高德地图 搜索功能
 pod 'AMapLocation' #高德地图 定位SDK
 pod 'CryptoSwift', '~> 1.0' #加密
 pod 'SwiftyJSON'
+pod 'SnapKit'
 
 #公共组件
 pod 'JCore', '2.1.4-noidfa'

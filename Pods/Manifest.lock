@@ -70,6 +70,7 @@ DEPENDENCIES:
   - MJRefresh
   - Moya/RxSwift (~> 14.0)
   - Segmentio
+  - SnapKit
   - SVProgressHUD
   - SwifterSwift/Foundation
   - SwifterSwift/SwiftStdlib
@@ -140,6 +141,6 @@ SPEC CHECKSUMS:
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   YPImagePicker: 6f410f475bd22fa8cd430495b54d4b2f15865c2d
 
-PODFILE CHECKSUM: d09721ee1724aac50ef11146c70eb4fc484f0b6c
+PODFILE CHECKSUM: f4f4200340831c2215ed41f98606660de92b40ee
 
 COCOAPODS: 1.10.1
