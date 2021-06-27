@@ -2187,7 +2187,7 @@
             <objects>
                 <viewController id="Ci4-Xn-lI8" customClass="LMNotificationController" customModule="ZuYu2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="haz-Lu-dYC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Jzh-jX-Nmw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -2214,7 +2214,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="GoW-YZ-zeo" kind="relationship" relationship="rootViewController" id="C0m-fg-OCd"/>
+                        <segue destination="QE6-Ze-70B" kind="relationship" relationship="rootViewController" id="GPU-Et-YmO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1d0-iY-veU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

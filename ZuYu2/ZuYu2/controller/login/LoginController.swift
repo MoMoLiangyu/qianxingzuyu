@@ -117,8 +117,6 @@ class LoginController: UIViewController {
     func setUpUI() {
         
         AboutAuth.photoAndCameraAuthAction(view: self.view)
-        
-        print("推送成功了")
         JPUSHService.deleteAlias({ (iResCode, iAlias, seq) in
                     print("deleiResCode---\(iResCode)")
                     print("deleiAlias---\(iAlias ?? "")")
@@ -129,6 +127,10 @@ class LoginController: UIViewController {
         codeState = .get("获取验证码")
         passwordTf.rightView = forgetPwdBtn
         passwordTf.rightViewMode = .always
+        
+        //MARK 技师账号
+        phoneTf.text = "18296999117"
+        passwordTf.text = "123456"
     }
     
     override func viewWillAppear(_ animated: Bool) {
