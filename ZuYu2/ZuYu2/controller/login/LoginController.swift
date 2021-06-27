@@ -128,8 +128,8 @@ class LoginController: UIViewController {
         passwordTf.rightView = forgetPwdBtn
         passwordTf.rightViewMode = .always
         
-        //MARK 技师账号
-        phoneTf.text = "18296999117"
+        // phoneTf.text = "18296999117" //楼面端账号
+        phoneTf.text = "17346614268" //技师账号
         passwordTf.text = "123456"
     }
     
