@@ -178,7 +178,7 @@ extension AppDelegate: JPUSHRegisterDelegate {
         JPUSHService.setup(withOption: launchOptions,
                            appKey: "c58c972c3158e58d16f676ba",
                            channel: "App Store",
-                           apsForProduction: true,
+                           apsForProduction: false,
                            advertisingIdentifier: nil)
     }
     
